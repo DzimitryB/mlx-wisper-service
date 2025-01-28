@@ -22,3 +22,26 @@ docker-compose up --build
 # Локальный запуск
 pip install -r requirements.txt
 python main.py
+```
+
+## Структура проекта
+
+```
+transcription-service/
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── docker-compose.yml
+├── requirements.txt
+├── config/
+│   └── settings.py
+├── src/
+│   ├── __init__.py
+│   ├── downloader.py
+│   ├── exceptions.py
+│   ├── logger.py
+│   ├── queue_client.py
+│   └── transcriber.py
+└── main.py
