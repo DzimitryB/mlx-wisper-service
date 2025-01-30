@@ -1,3 +1,4 @@
+from config.settings import settings
 import mlx.core as mx
 from mlx_whisper import load_model, transcribe
 from .logger import logger
