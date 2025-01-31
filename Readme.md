@@ -59,4 +59,35 @@ transcription-service/
 │   ├── logger.py
 │   ├── queue_client.py
 │   └── transcriber.py
-└── main.py
+├── main.py
+├── test.py
+
+## Quick test run
+```bash
+
+# ForMacOS
+# Install libraries
+brew install ffmpeg redis rabbitmq
+
+# Run services
+brew services start rabbitmq
+brew services start redis
+
+# apply virtual environment
+cd transcription-service
+python -m venv venv
+source venv/bin/activate
+
+# install dependencies
+pip install -r requirements.txt
+
+# copy and configure .env
+cp .env.example .env
+nano .env  # fill in BOT_TOKEN and other variables if needed
+
+# run service
+python main.py
+
+# run test
+python test.py
+```
