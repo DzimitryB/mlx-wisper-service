@@ -71,7 +71,7 @@ transcription-service/
 # Install libraries
 brew install ffmpeg redis rabbitmq
 
-# Run services
+# Run services in separate terminal 
 brew services start rabbitmq
 brew services start redis
 
