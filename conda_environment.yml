@@ -1,0 +1,22 @@
+## If you want to use conda to create virtual environment "mlx"
+## conda env create -f conda_environment.yml
+## or conda env update -f conda_environment.yml
+name: mlx
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - ffmpeg
+  - numpy=1.26.4
+  - numba=0.59.0
+  - pip
+  - pip:
+    - mlx-whisper
+    - mlx>=0.1.0
+    - pytube==15.0.0
+    - python-dotenv==1.0.0
+    - redis==5.0.3
+    - pika==1.3.2
+    - ffmpeg-python==0.2.0
+    - loguru==0.7.2

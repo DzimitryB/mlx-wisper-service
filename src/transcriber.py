@@ -1,6 +1,6 @@
 from config.settings import settings
 import mlx.core as mx
-from mlx_whisper import load_model, transcribe
+from mlx_whisper import load_models, transcribe
 from .logger import logger
 from .exceptions import TranscriptionError
 
@@ -12,7 +12,7 @@ class WhisperTranscriber:
     def load_model(self):
         try:
             config = settings.whisper_config
-            self.model, self.tokenizer, _ = load_model(
+            self.model, self.tokenizer, _ = load_models(
                 config["model"],
                 quantize=config["quantized"]
             )

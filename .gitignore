@@ -1,7 +1,9 @@
 .env
 *.mp3
 *.wav
+*.log
 pycache
+*pycache*
 *.egg-info
 venv
 .DS_Store
