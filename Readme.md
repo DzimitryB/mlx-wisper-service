@@ -62,6 +62,8 @@ transcription-service/
 ├── main.py
 ├── test.py
 
+```
+
 ## Quick test run
 ```bash
 
