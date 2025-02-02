@@ -11,7 +11,7 @@ def configure_logger():
     logger.add(
         "logs/transcription.log",
         rotation="10 MB",
-        retention="7 days",
+        retention="30 days",
         level="DEBUG"
     )
     return logger

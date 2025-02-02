@@ -31,4 +31,4 @@ while True:
         result = r.get(f"result:{task_id}")
         print("Result:", result.decode()[:200] + "...")  # первые 200 символов
         break
-    time.sleep(1)
+    time.sleep(2)

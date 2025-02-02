@@ -7,9 +7,7 @@ class Settings:
     @property
     def whisper_config(self):
         return {
-            "model": os.getenv("WHISPER_MODEL", "base"),
-            "quantized": os.getenv("WHISPER_QUANTIZED", "True") == "True",
-            "device": os.getenv("WHISPER_DEVICE", "mps")
+            "model": os.getenv("WHISPER_MODEL", "mlx_models/tiny")
         }
     
     @property
@@ -19,5 +17,20 @@ class Settings:
     @property
     def rabbitmq_url(self):
         return os.getenv("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
+    
+    @property
+    def audio_settings(self):
+        return {
+            'bitrate': '128k',
+            'format': 'mp3'
+        }
+    
+    @property
+    def ffmpeg_location(self):
+        return '/opt/homebrew/bin/ffmpeg'
+    
+    @property
+    def huggingface_api_key(self):
+        return os.getenv("HUGGINGFACE_API_KEY", "hf_your_api_key")
 
 settings = Settings()
