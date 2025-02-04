@@ -14,9 +14,18 @@ class Settings:
     def redis_url(self):
         return os.getenv("REDIS_URL", "redis://localhost:6379/0")
     
+
     @property
-    def rabbitmq_url(self):
-        return os.getenv("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
+    def rabbitmq_config(self):
+        return {
+            'host':os.getenv('RABBITMQ_HOST', 'localhost'),
+            'port':int(os.getenv('RABBITMQ_PORT', 5672)),
+            'user':os.getenv('RABBITMQ_USER', 'guest'),
+            'password':os.getenv('RABBITMQ_PASSWORD', 'guest'),
+            'heartbeat':int(os.getenv('HEARTBEAT', 600)),
+            'blocked_connection':int(os.getenv('BLOCKED_CONNECTION_TIMEOUT', 600))
+        }
+ 
     
     @property
     def audio_settings(self):
