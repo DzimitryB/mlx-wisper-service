@@ -8,19 +8,13 @@ class QueueClient:
     def __init__(self):
         self.connection = None
         self.channel = None
-        self.blocked_connection_timeout = 600
-        self.heartbeat = 600
 
     def connect(self):
         try:
             # Создаем параметры соединения
-            connection_params = pika.ConnectionParameters(
-                settings.rabbitmq_url,
-                heartbeat=self.heartbeat,
-                blocked_connection_timeout=self.blocked_connection_timeout
-            )
+            print("++++++++++++", settings.rabbitmq_url)
+            connection_params = pika.ConnectionParameters(settings.rabbitmq_url)
 
-            
             # Устанавливаем соединение с использованием параметров
             self.connection = pika.BlockingConnection(connection_params)
             self.channel = self.connection.channel()
