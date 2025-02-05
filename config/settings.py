@@ -16,7 +16,7 @@ class Settings:
     
 
     @property
-    def rabbitmq_config(self):
+    def rabbitmq(self):
         return {
             'host':os.getenv('RABBITMQ_HOST', 'localhost'),
             'port':int(os.getenv('RABBITMQ_PORT', 5672)),

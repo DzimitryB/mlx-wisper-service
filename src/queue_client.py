@@ -12,8 +12,17 @@ class QueueClient:
     def connect(self):
         try:
             # Создаем параметры соединения
-            print("++++++++++++", settings.rabbitmq_url)
-            connection_params = pika.ConnectionParameters(settings.rabbitmq_url)
+            credentials = pika.PlainCredentials(
+                settings.rabbitmq['user'],
+                settings.rabbitmq['password']
+            )
+            connection_params = pika.ConnectionParameters(
+                host=settings.rabbitmq['host'],
+                port=settings.rabbitmq['port'],
+                credentials=credentials,
+                heartbeat=settings.rabbitmq['heartbeat'],
+                blocked_connection_timeout=settings.rabbitmq['blocked_connection']
+            )
 
             # Устанавливаем соединение с использованием параметров
             self.connection = pika.BlockingConnection(connection_params)
