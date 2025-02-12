@@ -2,7 +2,6 @@
 
 Микросервис для транскрипции видео/аудио с использованием MLX.
 
-
 ## Environment Variables
 
 | Переменная | Описание |
@@ -17,13 +16,15 @@
 
 POST /transcribe - Запуск транскрипции
 
-## Features
+## Features  
+
 - Поддержка YouTube и прямых ссылок на видео
 - Транскрипция через MLX-Whisper (оптимизировано для Apple Silicon)
 - Интеграция с RabbitMQ и Redis
 - Конфигурация через переменные окружения
 
 ## Quick Start
+
 ```bash
 git clone https://github.com/your-repo/transcription-service
 cd transcription-service
@@ -41,7 +42,7 @@ python main.py
 
 ## Структура проекта
 
-```
+```markdown
 transcription-service/
 ├── .dockerignore
 ├── .env.example
@@ -61,12 +62,11 @@ transcription-service/
 │   └── transcriber.py
 ├── main.py
 ├── test.py
-
 ```
 
 ## Quick test run
-```bash
 
+```bash
 # ForMacOS
 # Install libraries
 brew install ffmpeg redis rabbitmq
@@ -92,4 +92,3 @@ python main.py
 
 # run test
 python test.py
-```
