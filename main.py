@@ -12,7 +12,15 @@ def main():
     transcriber = WhisperTranscriber()
     queue_client = QueueClient()
     
+    # Подключение к Redis
     redis_conn = redis.Redis.from_url(settings.redis_url)
+
+    # Подключение к очереди
+    try:
+        queue_client.connect()  # Убедитесь, что соединение устанавливается
+    except Exception as e:
+        logger.critical(f"Failed to connect to RabbitMQ: {str(e)}")
+        return
 
     def callback(ch, method, properties, body):
         task_id = body.decode()
