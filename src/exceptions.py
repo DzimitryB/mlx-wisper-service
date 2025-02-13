@@ -1,5 +1,5 @@
 class TranscriptionError(Exception):
-    """Базовое исключение для ошибок транскрипции"""
+    """Базовый класс для ошибок транскрипции"""
     pass
 
 class QueueConnectionError(TranscriptionError):
