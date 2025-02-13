@@ -18,12 +18,12 @@ class Settings:
     @property
     def rabbitmq(self):
         return {
-            'host':os.getenv('RABBITMQ_HOST', 'localhost'),
-            'port':int(os.getenv('RABBITMQ_PORT', 5672)),
-            'user':os.getenv('RABBITMQ_USER', 'guest'),
-            'password':os.getenv('RABBITMQ_PASSWORD', 'guest'),
-            'heartbeat':int(os.getenv('HEARTBEAT', 600)),
-            'blocked_connection':int(os.getenv('BLOCKED_CONNECTION_TIMEOUT', 600))
+            # 'host':os.getenv('RABBITMQ_HOST', 'localhost'),
+            # 'port':int(os.getenv('RABBITMQ_PORT', 5672)),
+            # 'user':os.getenv('RABBITMQ_USER', 'guest'),
+            # 'password':os.getenv('RABBITMQ_PASSWORD', 'guest'),
+            # 'heartbeat':int(os.getenv('HEARTBEAT', 600)),
+            # 'blocked_connection':int(os.getenv('BLOCKED_CONNECTION_TIMEOUT', 600))
         }
  
     
